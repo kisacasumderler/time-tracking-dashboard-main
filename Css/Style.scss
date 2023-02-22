@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+$FontFamily : 'Rubik', sans-serif;
+
+// Colors
+
+// Primary
+
+$Blue: hsl(246, 80%, 60%);
+
+$Lightred_work : hsl(15, 100%, 70%);
+$Softblue_play : hsl(195, 74%, 62%);
+$Lightred_study : hsl(348, 100%, 68%);
+$Limegreen_exercise : hsl(145, 58%, 55%);
+$Violet_social : hsl(264, 64%, 52%);
+$Softorange_selfCare : hsl(43, 84%, 65%);
+
+// Neutral
+
+$Verydarkblue: hsl(226, 43%, 10%);
+$Darkblue: hsl(235, 46%, 20%);
+$Desaturatedblue: hsl(235, 45%, 61%);
+$PaleBlue: hsl(236, 100%, 87%);
+
+// Typography / Body Copy
+
+$FontSize: 18px ; // (card titles e.g. Work, Play)
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    letter-spacing: .05rem;
+    font-family: $FontFamily;
+}
+
+@mixin DisplayFlex(){
+    display: flex;
+}
+
+@mixin FlexCenterColumn() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin FlexCenterRow() {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin useSelectNone() {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+@mixin CalLi($val){
+    background-image: url("../images/icon-"+$val+".svg");
+    background-repeat: no-repeat;
+    background-position: top 0 right 10%;
+    background-size: auto;
+}
+
+body {
+    user-select: none;
+    width: 100%;
+    @include FlexCenterColumn();
+    background: $Verydarkblue;
+    min-height: 100vh;
+    position: relative;
+    main {
+        width: 85%;
+        @include FlexCenterRow();
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2rem;
+        header {
+            background: $Darkblue;
+            border-radius: 1.5rem;
+            width: 34%;
+            .inf {
+                padding: 2.3rem 2rem;
+                background: $Blue;
+                border-radius: 1.5rem;
+                .img {
+                    width: calc(3.5rem + 2vw);
+                    height: calc(3.5rem + 2vw);
+                    margin-bottom: 3rem;
+                    border: 2px solid #fff;
+                    border-radius: 100%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 100%;
+                    }
+                }
+                span {
+                    color: $PaleBlue;
+                }
+                h1 {
+                    font-size: 3rem;
+                    font-weight: 300;
+                    margin-bottom: 3rem;
+                    color: #fff;
+                    text-transform: capitalize;
+                }
+            }
+            .buttons {
+                padding: 2rem;
+                background: $Darkblue;
+                @include FlexCenterColumn();
+                align-items: flex-start;
+                gap: 1rem;
+                border-radius: 1.5rem;
+                button {
+                    background: none;
+                    border: none;
+                    font-size: 1.3rem;
+                    color: $Desaturatedblue;
+                    font-weight: 300;
+                    cursor: pointer;
+                    transition: .3s ease;
+                }
+                button:hover {
+                    color:  #fff;
+                }
+            }
+        }
+        ul {
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 2rem;
+            background: transparent;
+            #Work {
+                background: $Lightred_work;
+                @include CalLi("work");
+            }
+            #Play {
+                background: $Softblue_play;
+                @include CalLi("play");
+            }
+            #Study {
+                background: $Lightred_study;
+                @include CalLi("study");
+            }
+            #Exercise {
+                background: $Limegreen_exercise;
+                @include CalLi("exercise");
+            }
+            #Social {
+                background: $Violet_social;
+                @include CalLi("social");
+            }
+            #Self {
+                background: $Softorange_selfCare;
+                @include CalLi("self-care");
+            }
+
+            li {
+                border-radius: 1rem;
+                .contain {
+                    margin-top: 3rem;
+                    background: $Darkblue;
+                    padding: 1.5rem;
+                    border-radius: 1rem;
+                    transition: .3s ease;
+                    cursor: pointer;
+                    h2 {
+                        color: #fff;
+                        font-size: 1;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                        margin-bottom: 2rem;
+                        b {
+                            font-weight: 300;
+                        }
+                        img {
+                            cursor: pointer;
+                        }
+                    }
+                    #time {
+                        font-weight: 100;
+                        font-size: 3.5rem;
+                        color: #fff;
+                    }
+                    div {
+                        margin-top: 1.5rem;
+                        color: $PaleBlue;
+                    }
+                }
+                .contain:hover {
+                    background: $Desaturatedblue;
+                }
+            }
+        }
+    }
+    footer {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        background: $Desaturatedblue;
+        padding-top: .5rem;
+        border-radius: .5rem .5rem 0 0;
+        .attribution {
+            border-radius: .5rem .5rem 0 0;
+            background: $Darkblue;
+            padding: .7rem 0;
+            span {
+                color: $Desaturatedblue;
+            }
+            a {
+                color: $PaleBlue;
+                font-weight: 500;
+                transition: .3s ease;
+            }
+            a:link, a:visited {
+                color: $Softorange_selfCare;
+            }
+            a:hover {
+                color: $Lightred_work;
+            }
+        }
+    }
+}
+
+@media(min-width:1500px){
+    body{
+        main {
+            width: 70vw;
+        }
+    }
+}
+
+@media(max-width:1200px){
+    body{
+        main {
+            width: 90%;
+        }
+    }
+}
+
+@media(max-width:990px){
+    body{
+        justify-content: flex-start;
+        main {
+            width: 95%;
+            flex-direction: column;
+            align-items: center;
+            margin: 10% 0;
+            header {
+                width: 80%;
+            }
+            ul {
+                width: 80%;
+                grid-template-columns: auto;
+            }
+        }
+        footer {
+            position: relative;
+            .attribution {
+                padding: .5rem;
+            }
+        }
+    }
+}
