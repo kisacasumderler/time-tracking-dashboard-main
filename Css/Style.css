@@ -162,7 +162,7 @@ body main ul li .contain h2 b {
 body main ul li .contain h2 img {
   cursor: pointer;
 }
-body main ul li .contain #time {
+body main ul li .contain .time {
   font-weight: 100;
   font-size: 3.5rem;
   color: #fff;

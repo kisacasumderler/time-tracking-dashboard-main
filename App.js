@@ -18,11 +18,11 @@ let liId ;
 let RenderData = (e, deger) => {
 
     if (deger == "Daily") {
-        Time = `<b id='time'>${e.timeframes.daily.current}hrs</b><div>Last Daily - ${e.timeframes.daily.previous}hrs</div>`;
+        Time = `<b class='time'>${e.timeframes.daily.current}hrs</b><div>Last Daily - ${e.timeframes.daily.previous}hrs</div>`;
     } else if (deger == "Monthly") {
-        Time = `<b id='time'>${e.timeframes.monthly.current}hrs</b><div>Last Monthly - ${e.timeframes.monthly.previous}hrs</div>`;
+        Time = `<b class='time'>${e.timeframes.monthly.current}hrs</b><div>Last Monthly - ${e.timeframes.monthly.previous}hrs</div>`;
     } else if (deger == "Weekly") {
-        Time = `<b id='time'>${e.timeframes.weekly.current}hrs</b><div>Last  Weekly- ${e.timeframes.weekly.previous}hrs</div>`;
+        Time = `<b class='time'>${e.timeframes.weekly.current}hrs</b><div>Last  Weekly- ${e.timeframes.weekly.previous}hrs</div>`;
     }
 
     if(e.title!="Self Care"){
